@@ -1,0 +1,6 @@
+#Uses login.php when writing the url of my website
+DirectoryIndex main.php index.php index.html
+
+#Redirects if a resource cannot be found to my error type message
+ErrorDocument 404 /error/404.php
+ErrorDocument 403 /error/403.php

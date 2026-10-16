@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Handjet:wght,ELSH@100..900,2&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+:root{
+    --bg: #272949;
+    --dark-1: #222446;
+    --dark-2: #2a2a50;
+    --text: #b1b1c7;
+    --light-1: #7F8CAA;
+    --light-2: #B8CFCE;
+    --light-3: #EAEFEF;
+    --err: #ff334e;
+    --teal: 66, 223, 183; /* glabājam kā rgb vērtības, lai spetu strādāt kopā ar rgba (opacity) */
+    --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 10%);
+    --border-r: .7rem;
+}
+
+* {
+    font-family: "JetBrains Mono", monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    text-decoration: none;
+    transition: all .2s ease-out;
+    scroll-behavior: smooth;
+}
+
+.font-archivo{
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body{
+    background: var(--dark-1);
+}
+
+header{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    padding: 1rem 12%;
+    box-shadow: var(--box-shadow);
+    z-index: 10;
+    display: flex;
+    background-color: var(--dark-2);
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a{
+    margin: 0 .5rem;
+}
+
+.logo{
+    color: var(--light-3);
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.logo i{
+    color: rgb(var(--teal));
+    text-shadow: rgb(var(--teal)) 0 0 .2rem;
+}
+
+.logo:hover{
+    text-shadow: rgb(var(--light-1)) 0 0 .5rem;
+}
+
+.btn{
+    color: var(--light-3);
+    font-size: medium;
+}
+
+.btn-active{
+    color: rgb(var(--teal));
+    background: rgba(var(--teal), 10%);
+    outline: .1rem solid rgb(var(--teal));
+    padding: .5rem 1rem;
+    margin-left: 1rem;
+    border-radius: var(--border-r);
+}
+
+.btn:hover{
+    color: rgb(var(--teal));
+}
+
+.btn-active:hover{
+    background: rgba(var(--teal), 100%);
+    color: var(--bg);
+}
+
+.hero{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero h1 {
+    background: linear-gradient(270deg, #894aff, rgb(var(--teal)));
+    background-size: 400% 400%;
+
+    /* pievieno gradient bg tekstam */
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    /* paslēpj teksta krāsu un rāda gradient bg */
+    -webkit-text-fill-color: transparent; 
+    color: transparent;
+
+    animation: grad-animation 10s ease infinite;
+
+    font-size: 5rem;
+    margin-top: 5rem;
+}
+
+.hero p{
+    color: var(--text);
+}
+
+@keyframes grad-animation {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 25rem;
+}
+
+.container #register{
+    display: none;
+}
+
+.info #error-msg{
+    color: var(--err);
+    text-shadow: 0 0 0.2rem var(--err);
+    padding-bottom: .5rem;
+    text-align: center;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login{
+    width: 38rem;
+    margin: auto;
+    padding: 2.5rem;
+    background: var(--bg);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-r);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.login h2{
+    color: var(--light-3);
+    padding-bottom: .75rem;
+    text-align: center;
+}
+
+.login i{
+    color: var(--light-3);
+}
+
+.login input, .register input{
+    height: 100%;
+    width: 90%;
+    outline: none;
+    padding: .75rem .75rem;
+    margin: .5rem;
+    border-radius: .5rem;
+    background-color: var(--dark-2);
+    font-size: 1.1rem;
+    color: var(--light-3);
+}
+
+.login button{
+    margin-top: .75rem;
+    width: 90%;
+    font-size: 1rem;
+}
+
+.register-text{
+    margin-top: 1rem;
+    text-align: center;
+    color: var(--light-3);
+}
+
+.register-text a{
+    color: rgb(var(--teal));
+}
+
+.register-text a:hover{
+    text-shadow: 0 0 0.2rem rgb(var(--teal));
+}
+
+/* responsivitate */
+
+@media (max-width: 1000px) {
+    section {
+        min-height: 0;
+    }
+}
