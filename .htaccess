@@ -1,4 +1,4 @@
-#Uses login.php when writing the url of my website
+#Uses main.php when writing the url of my website
 DirectoryIndex main.php index.php index.html
 
 #Redirects if a resource cannot be found to my error type message

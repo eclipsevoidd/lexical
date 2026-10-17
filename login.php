@@ -60,5 +60,5 @@
 </div>
 
 </body>
-<script src="assets/login.js"></script>
+<script src="/assets/login.js"></script>
 </html>
