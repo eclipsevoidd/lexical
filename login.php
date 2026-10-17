@@ -1,13 +1,15 @@
 <?php 
-    require "assets/auth.php";
-    require "assets/header.php";
+    ini_set('display_errors', 1);
+    error_reporting(E_ALL);
+    require __DIR__ . "/assets/auth.php";
+    require __DIR__ . "/assets/header.php";
 ?>
 
 <div class="container">
-    <div class="login" id="login">
+    <div class="login" id="login" style="display: <?php echo ($active_form === 'login') ? 'flex' : 'none'; ?>;">
         <h2>login</h2>
         <div class="info">
-            <p id="login-error"><?php echo htmlspecialchars($login_error); ?></p>
+            <p class= "error-msg" id="login-error"><?php echo htmlspecialchars($error_login); ?></p>
         </div>
 
         <form method="POST">
@@ -28,16 +30,20 @@
         </form>
     </div>
 
-    <div class="login" id="register" style="display: <?php echo $active_form === 'register' ? 'flex' : 'none'; ?>">
+    <div class="login" id="register" style="display: <?php echo ($active_form === 'register') ? 'flex' : 'none'; ?>;">
         <h2>register</h2>
         <div class="info">
-            <p id="register-error"><?php echo htmlspecialchars($register_error); ?></p>
+            <p class= "error-msg" id="register-error"><?php echo htmlspecialchars($error_register); ?></p> <!-- nodrošinās ka katrai formai savs error msg (otrā nerādīsies tas) -->
         </div>
 
         <form method="POST">
             <div class="row">
                 <i class="fas fa-user"></i>
                 <input type="text" name="username" placeholder="username" required>
+            </div>
+            <div class="row">
+                <i class="fas fa-envelope"></i>
+                <input type="text" name="email" placeholder="e-mail" required>
             </div>
             <div class="row">
                 <i class="fas fa-lock"></i>

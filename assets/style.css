@@ -129,16 +129,15 @@ nav a{
 .container{
     display: flex;
     justify-content: center;
-    align-items: center;
-
-    min-height: 25rem;
+    align-items: flex-start;
+    min-height: 100vh;
 }
 
 .container #register{
     display: none;
 }
 
-.info #error-msg{
+.info .error-msg{
     color: var(--err);
     text-shadow: 0 0 0.2rem var(--err);
     padding-bottom: .5rem;
@@ -151,9 +150,8 @@ nav a{
     justify-content: center;
 }
 
-.login{
+.login {
     width: 38rem;
-    margin: auto;
     padding: 2.5rem;
     background: var(--bg);
     box-shadow: var(--box-shadow);
@@ -161,6 +159,8 @@ nav a{
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
+    margin-top: 7.5rem;
+    box-sizing: border-box;
 }
 
 .login h2{
