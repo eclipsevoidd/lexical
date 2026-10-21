@@ -7,16 +7,8 @@
 ?>
 <main>
     <section class="hero">
-        <?php if (!$logged_in): ?>
-            <h1>welcome to lexical. </h1>
-            <p>log in to get started.</p>
-        <?php elseif ($username === "leafy"): ?>
-            <h1>sveiks intar.</h1>
-            <p>welcome to the final opsec level, brother</p>
-        <?php else: ?>
-            <h1>hello, <?php echo htmlspecialchars($_SESSION['username']); ?>.</h1>
-            <p>you are logged in.</p>
-        <?php endif; ?> <!-- endif forma izmantota kad if starpā satur html un php, ērtāk! -->
+        <h1>welcome.</h1>
+        <p>:)</p>
     </section>
 </main>
 </body>

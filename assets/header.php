@@ -17,6 +17,24 @@
         <nav>
             <a href="#" class="btn">about</a><a href="#" class="btn">settings</a>
 
-            <a href="/login.php" class="btn-active">account<i class="fa-solid fa-circle-user"></i></a>
+            <?php if (isset($_SESSION['user_id'])): ?>
+                <div class="account-actions">
+                    <a href="/assets/account.php" class="btn-active" aria-label="account">
+                        <i class="fa-solid fa-circle-user" aria-hidden="true"></i>
+                    </a>
+                    
+                    <form action="/assets/logout.php" method="post">
+                        <button type="submit" class="btn-active-red">
+                            <i class="fa fa-sign-out" aria-hidden="true"></i>
+                        </button>
+                    </form>
+
+                </div>
+            <?php else: ?>
+                <a href="/login.php" class="btn-active">
+                    account
+                    <i class="fa-solid fa-circle-user" aria-hidden="true"></i>
+                </a>
+            <?php endif; ?>
         </nav>
     </header>
